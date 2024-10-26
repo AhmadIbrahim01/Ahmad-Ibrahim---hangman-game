@@ -1,4 +1,4 @@
-var words = ["programming", "codinga", "bootacamp", "taha", "jane"]
+var words = ["programming", "coding", "bootcamp", "taha", "jane"]
 
 var answer = document.getElementById("answer-section")
 var tries = 6
@@ -35,9 +35,6 @@ function display(){
     answer.innerHTML = dashes.toLocaleString()
 }
 display()
-// function deleteOldAnswer(){
-//     answer.innerHTML = ""
-// }
 
 
 // Select all elements with the class "letter"
@@ -65,6 +62,7 @@ letters.forEach(letter => {
         if(dashes.includes("-") == 0){
             alert(`YOU WIN THE WORD IS ${current_answer}`)
             flag = true
+            location.reload();
             break
         }
     }
@@ -74,8 +72,15 @@ letters.forEach(letter => {
         tries -= 1
         hangMan()
     }
+    if (tries == 0){
+        endGame()
+    }
 
 
   });
 });
 
+function endGame(){
+    alert("YOU LOST THE GAME!!!!!!!!")
+    location.reload();
+}

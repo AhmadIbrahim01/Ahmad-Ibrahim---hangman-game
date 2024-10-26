@@ -18,8 +18,9 @@ var img_class = [
 
 var hang = document.getElementById("hang")
 
+// Function to append img tag
 function hangMan(){
-    const img = document.createElement('img');
+    var img = document.createElement('img');
     img.src = img_src[tries]
     img.classList = img_class[tries]
     hang.appendChild(img);
